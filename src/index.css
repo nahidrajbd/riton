@@ -304,23 +304,34 @@ img {
   overflow: hidden;
 }
 
-.hero-bg {
+/* Slider container — fills hero section */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Each slide — absolutely stacked, fade via opacity */
+.hero-slide {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center top;
   background-color: #1d2f2d;
+  /* transition set inline per slide */
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 3;
   background: linear-gradient(
     135deg,
-    rgba(29, 47, 45, 0.88) 0%,
-    rgba(0, 122, 63, 0.72) 60%,
-    rgba(29, 47, 45, 0.9) 100%
+    rgba(29, 47, 45, 0.82) 0%,
+    rgba(0, 122, 63, 0.65) 60%,
+    rgba(29, 47, 45, 0.85) 100%
   );
+  pointer-events: none;
 }
 
 .hero-content {
@@ -333,18 +344,37 @@ img {
   animation: fadeInUp 1s ease 0.2s both;
 }
 
-.hero-badge {
-  display: inline-block;
-  background: rgba(255, 221, 13, 0.15);
-  border: 1px solid rgba(255, 221, 13, 0.4);
-  color: #ffdd0d;
-  padding: 0.35rem 1.25rem;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 1.25rem;
-  letter-spacing: 0.05em;
-  animation: fadeIn 1s ease 0.5s both;
+/* Dot indicators */
+.hero-dots {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+  animation: fadeIn 1s ease 1s both;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.35s ease;
+}
+
+.hero-dot.active {
+  background: #ffdd0d;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.hero-dot:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.65);
 }
 
 .hero-title {
