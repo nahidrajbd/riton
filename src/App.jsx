@@ -1,6 +1,8 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import InspiringLeaders from "./components/InspiringLeaders";
 import CurrentPosition from "./components/CurrentPosition";
 import Timeline from "./components/Timeline";
 import LeadershipHighlights from "./components/LeadershipHighlights";
@@ -11,13 +13,15 @@ import Gallery from "./components/Gallery";
 import Updates from "./components/Updates";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import LeaderPage from "./components/LeaderPage";
 
-export default function App() {
+function HomePage() {
   return (
     <>
       <Navbar />
       <main>
         <Hero />
+        <InspiringLeaders />
         <About />
         <CurrentPosition />
         <Timeline />
@@ -31,5 +35,16 @@ export default function App() {
       </main>
       <Footer />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/leader/:slug" element={<LeaderPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
