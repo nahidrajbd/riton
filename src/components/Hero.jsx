@@ -3,8 +3,6 @@ import { hero, images } from "../data/content";
 
 // All images used in the slider — portrait first for immediate load
 const sliderImages = [
-  "/images/Mahafujur-Rahman-Riton-portrait.jpg",
-  "/images/Mahafujur-Rahman-Riton-2.jpg",
   "/images/Mahafujur-Rahman-Riton-3.jpg",
   "/images/Mahafujur-Rahman-Riton-4.jpg",
   "/images/Mahafujur-Rahman-Riton-5.jpg",
