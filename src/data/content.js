@@ -215,12 +215,12 @@ export const contact = {
     "মাহফুজুর রহমান রিটনের কার্যক্রম ও সর্বশেষ আপডেট জানতে সামাজিক যোগাযোগমাধ্যমে যুক্ত থাকুন।",
   // Other social media temporarily disabled until real links are available
   social: [
-    // {
-    //   platform: "Facebook",
-    //   label: "Facebook",
-    //   url: "#",
-    //   icon: "facebook",
-    // },
+    {
+      platform: "Facebook",
+      label: "Facebook",
+      url: "https://www.facebook.com/MahfuzurRahmanRiton",
+      icon: "facebook",
+    },
     // {
     //   platform: "YouTube",
     //   label: "YouTube",
