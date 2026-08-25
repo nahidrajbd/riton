@@ -2,8 +2,7 @@ import { useEffect, useRef } from "react";
 import { personalBackground } from "../data/content";
 
 export default function Background() {
-  const leftRef = useRef(null);
-  const rightRef = useRef(null);
+  const textRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -14,8 +13,7 @@ export default function Background() {
       },
       { threshold: 0.15 }
     );
-    if (leftRef.current) observer.observe(leftRef.current);
-    if (rightRef.current) observer.observe(rightRef.current);
+    if (textRef.current) observer.observe(textRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -30,21 +28,8 @@ export default function Background() {
           <div className="divider center" />
         </div>
 
-        <div className="background-grid">
-          {/* Info table */}
-          <div className="info-table reveal-left" ref={leftRef}>
-            {personalBackground.details.map((row, i) => (
-              <div className="info-row" key={i}>
-                <span className="info-label">{row.label}</span>
-                <span className="info-value">{row.value}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Description */}
-          <div className="background-text reveal-right" ref={rightRef}>
-            <p>{personalBackground.description}</p>
-          </div>
+        <div className="background-text reveal-left" ref={textRef}>
+          <p>{personalBackground.description}</p>
         </div>
       </div>
     </section>
