@@ -213,30 +213,30 @@ export const contact = {
   heading: "যোগাযোগ",
   description:
     "মাহফুজুর রহমান রিটনের কার্যক্রম ও সর্বশেষ আপডেট জানতে সামাজিক যোগাযোগমাধ্যমে যুক্ত থাকুন।",
-  // Replace these placeholder URLs with real social media links
+  // Other social media temporarily disabled until real links are available
   social: [
-    {
-      platform: "Facebook",
-      label: "Facebook",
-      url: "#",
-      icon: "facebook",
-    },
-    {
-      platform: "YouTube",
-      label: "YouTube",
-      url: "#",
-      icon: "youtube",
-    },
-    {
-      platform: "Instagram",
-      label: "Instagram",
-      url: "#",
-      icon: "instagram",
-    },
+    // {
+    //   platform: "Facebook",
+    //   label: "Facebook",
+    //   url: "#",
+    //   icon: "facebook",
+    // },
+    // {
+    //   platform: "YouTube",
+    //   label: "YouTube",
+    //   url: "#",
+    //   icon: "youtube",
+    // },
+    // {
+    //   platform: "Instagram",
+    //   label: "Instagram",
+    //   url: "#",
+    //   icon: "instagram",
+    // },
     {
       platform: "Email",
       label: "Email",
-      url: "mailto:#",
+      url: "mailto:info@ritonvai.com",
       icon: "email",
     },
   ],
