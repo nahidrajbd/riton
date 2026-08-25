@@ -14,6 +14,8 @@ import Updates from "./components/Updates";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import LeaderPage from "./components/LeaderPage";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsAndConditions from "./components/TermsAndConditions";
 
 function HomePage() {
   return (
@@ -44,6 +46,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/leader/:slug" element={<LeaderPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       </Routes>
     </BrowserRouter>
   );

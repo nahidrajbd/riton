@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { footer, navLinks } from "../data/content";
 
 export default function Footer() {
@@ -33,6 +34,14 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <p>{footer.copyright}</p>
+          <ul className="footer-legal">
+            <li>
+              <Link to="/privacy-policy">প্রাইভেসি পলিসি</Link>
+            </li>
+            <li>
+              <Link to="/terms-and-conditions">শর্তাবলী</Link>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>
