@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { navLinks } from "../data/content";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -36,6 +39,11 @@ export default function Navbar() {
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+      setMenuOpen(false);
+      return;
+    }
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
