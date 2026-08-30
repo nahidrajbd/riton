@@ -11,7 +11,13 @@ export default function LeaderPage() {
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [slug]);
+    if (leader) {
+      document.title = `${leader.name} | মাহফুজুর রহমান রিটন`;
+    }
+    return () => {
+      document.title = "মাহফুজুর রহমান রিটন | প্রশাসক, রাজশাহী সিটি কর্পোরেশন";
+    };
+  }, [slug, leader]);
 
   if (!leader) {
     return <Navigate to="/" replace />;

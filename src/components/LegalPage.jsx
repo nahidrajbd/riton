@@ -6,7 +6,11 @@ import Footer from "./Footer";
 export default function LegalPage({ title, updated, children }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+    document.title = `${title} | মাহফুজুর রহমান রিটন`;
+    return () => {
+      document.title = "মাহফুজুর রহমান রিটন | প্রশাসক, রাজশাহী সিটি কর্পোরেশন";
+    };
+  }, [title]);
 
   return (
     <>

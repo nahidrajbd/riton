@@ -12,6 +12,10 @@ export default function Complaint() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    document.title = "অভিযোগ | মাহফুজুর রহমান রিটন";
+    return () => {
+      document.title = "মাহফুজুর রহমান রিটন | প্রশাসক, রাজশাহী সিটি কর্পোরেশন";
+    };
   }, []);
 
   const handleSubmit = (e) => {
