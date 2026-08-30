@@ -32,7 +32,6 @@ export const navLinks = [
   { label: "হোম", href: "#home" },
   { label: "পরিচিতি", href: "#about" },
   { label: "পথচলা", href: "#timeline" },
-  { label: "নেতৃত্ব", href: "#leadership" },
   { label: "গ্যালারি", href: "#gallery" },
   { label: "আপডেট", href: "#updates" },
   { label: "যোগাযোগ", href: "#contact" },
@@ -118,29 +117,6 @@ export const timeline = {
     },
   ],
 };
-
-export const leadershipHighlights = [
-  {
-    stat: "৩০+ বছর",
-    label: "রাজনৈতিক ও নেতৃত্বের পথচলা",
-    icon: "calendar",
-  },
-  {
-    stat: "রাজশাহী",
-    label: "নিজ শহরের মানুষের পাশে থাকার অঙ্গীকার",
-    icon: "location",
-  },
-  {
-    stat: "এলএলবি অনার্স",
-    label: "শিক্ষাগত যোগ্যতা",
-    icon: "education",
-  },
-  {
-    stat: "প্রশাসক",
-    label: "রাজশাহী সিটি কর্পোরেশন",
-    icon: "star",
-  },
-];
 
 export const personalBackground = {
   heading: "ব্যক্তিগত পরিচিতি",

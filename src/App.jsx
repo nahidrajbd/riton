@@ -6,7 +6,6 @@ import About from "./components/About";
 import InspiringLeaders from "./components/InspiringLeaders";
 import CurrentPosition from "./components/CurrentPosition";
 import Timeline from "./components/Timeline";
-import LeadershipHighlights from "./components/LeadershipHighlights";
 import Background from "./components/Background";
 import Movement from "./components/Movement";
 import Rajshahi from "./components/Rajshahi";
@@ -41,7 +40,6 @@ function HomePage() {
         <About />
         <CurrentPosition />
         <Timeline />
-        <LeadershipHighlights />
         <Background />
         <Movement />
         <Rajshahi />
