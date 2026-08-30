@@ -36,6 +36,9 @@ export default function Footer() {
           <p>{footer.copyright}</p>
           <ul className="footer-legal">
             <li>
+              <Link to="/complaint">অভিযোগ করুন</Link>
+            </li>
+            <li>
               <Link to="/privacy-policy">প্রাইভেসি পলিসি</Link>
             </li>
             <li>

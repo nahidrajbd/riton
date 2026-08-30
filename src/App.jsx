@@ -16,6 +16,7 @@ import Footer from "./components/Footer";
 import LeaderPage from "./components/LeaderPage";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsAndConditions from "./components/TermsAndConditions";
+import Complaint from "./components/Complaint";
 
 function HomePage() {
   const location = useLocation();
@@ -60,6 +61,7 @@ export default function App() {
         <Route path="/leader/:slug" element={<LeaderPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/complaint" element={<Complaint />} />
       </Routes>
     </BrowserRouter>
   );

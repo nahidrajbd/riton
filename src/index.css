@@ -1187,21 +1187,6 @@ img {
   text-align: center;
 }
 
-.contact-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-top: 3rem;
-  text-align: left;
-}
-
-.contact-column-heading {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #1d2f2d;
-  margin-bottom: 1rem;
-}
-
 .complaint-form {
   display: flex;
   flex-direction: column;
@@ -1248,10 +1233,10 @@ img {
 
 .social-grid {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .social-btn {
@@ -1447,10 +1432,6 @@ img {
   .social-btn {
     padding: 0.8rem 1.4rem;
     font-size: 0.92rem;
-  }
-  .contact-columns {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
   }
   .complaint-form {
     max-width: none;
@@ -1657,6 +1638,37 @@ body,
 
 .legal-page-content a {
   color: #1f7a3d;
+}
+
+.complaint-disclaimer {
+  margin-top: 2rem;
+  padding: 1.5rem 1.75rem;
+  background: #f8fffe;
+  border: 1px solid #d8e6e0;
+  border-left: 4px solid #007a3f;
+  border-radius: 12px;
+  line-height: 1.8;
+}
+
+.complaint-disclaimer h2 {
+  font-size: 1.1rem;
+  color: #14371a;
+  margin-bottom: 0.9rem;
+}
+
+.complaint-disclaimer p {
+  color: #4a5568;
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
+}
+
+.complaint-disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-page-inner .complaint-form {
+  margin-top: 2.5rem;
+  max-width: none;
 }
 
 /* ============================================================
