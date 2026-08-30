@@ -431,6 +431,25 @@ img {
   box-shadow: 0 8px 24px rgba(0, 122, 63, 0.4);
 }
 
+.btn-secondary {
+  display: inline-block;
+  background: #ffffff;
+  color: #007a3f;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #007a3f;
+}
+
+.btn-secondary:hover {
+  background: #007a3f;
+  color: #ffffff;
+}
+
 .btn-outline {
   display: inline-block;
   background: transparent;
@@ -1607,6 +1626,16 @@ body,
   max-width: 800px;
 }
 
+.legal-page-inner .leader-back-link {
+  color: #5a7a6a;
+  border-color: #d8e6e0;
+}
+
+.legal-page-inner .leader-back-link:hover {
+  color: #007a3f;
+  border-color: #007a3f;
+}
+
 .legal-page-title {
   margin-top: 1.5rem;
   font-size: 2.25rem;
@@ -1640,35 +1669,163 @@ body,
   color: #1f7a3d;
 }
 
-.complaint-disclaimer {
-  margin-top: 2rem;
-  padding: 1.5rem 1.75rem;
+/* ============================================================
+   COMPLAINT PAGE
+   ============================================================ */
+.complaint-page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.complaint-hero {
+  background: linear-gradient(160deg, #14371a 0%, #007a3f 100%);
+  padding: 7.5rem 0 4rem;
+}
+
+.complaint-hero .leader-back-link {
+  margin-bottom: 2rem;
+}
+
+.complaint-hero-badge {
+  display: inline-block;
+  background: #ffdd0d;
+  color: #1d2f2d;
+  padding: 0.3rem 0.9rem;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.78rem;
+  margin-bottom: 1rem;
+}
+
+.complaint-hero-title {
+  color: #ffffff;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.complaint-hero-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.02rem;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.complaint-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3rem;
+  padding: 4rem 0 6rem;
+  align-items: start;
+}
+
+.complaint-notices {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.complaint-notice-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.complaint-notice-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   background: #f8fffe;
   border: 1px solid #d8e6e0;
-  border-left: 4px solid #007a3f;
-  border-radius: 12px;
-  line-height: 1.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007a3f;
 }
 
-.complaint-disclaimer h2 {
-  font-size: 1.1rem;
+.complaint-notice-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.complaint-notice-item h3 {
+  font-size: 1rem;
   color: #14371a;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.35rem;
 }
 
-.complaint-disclaimer p {
+.complaint-notice-item p {
+  color: #5a7a6a;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.complaint-form-card {
+  background: #ffffff;
+  border: 1px solid #e8f5e9;
+  border-radius: 20px;
+  padding: 2.25rem;
+  box-shadow: 0 20px 48px rgba(0, 122, 63, 0.1);
+}
+
+.complaint-form-card .complaint-form {
+  max-width: none;
+}
+
+.complaint-submit {
+  align-self: flex-start;
+}
+
+.complaint-success {
+  text-align: center;
+  padding: 1.5rem 0.5rem;
+}
+
+.complaint-success-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background: #e8f5e9;
+  color: #007a3f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.complaint-success-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.complaint-success h3 {
+  font-size: 1.25rem;
+  color: #14371a;
+  margin-bottom: 0.6rem;
+}
+
+.complaint-success p {
   color: #4a5568;
   font-size: 0.95rem;
-  margin-bottom: 0.9rem;
+  line-height: 1.7;
+  max-width: 380px;
+  margin: 0 auto 1.5rem;
 }
 
-.complaint-disclaimer p:last-child {
-  margin-bottom: 0;
+@media (max-width: 860px) {
+  .complaint-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
-.legal-page-inner .complaint-form {
-  margin-top: 2.5rem;
-  max-width: none;
+@media (max-width: 640px) {
+  .complaint-hero {
+    padding: 6.5rem 0 3rem;
+  }
+  .complaint-form-card {
+    padding: 1.5rem;
+  }
 }
 
 /* ============================================================
