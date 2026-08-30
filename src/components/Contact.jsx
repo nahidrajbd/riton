@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { contact } from "../data/content";
 
 const socialIcons = {
@@ -28,6 +28,77 @@ const socialIcons = {
   ),
 };
 
+function ComplaintForm() {
+  const [name, setName] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [complaint, setComplaint] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!complaint.trim()) return;
+
+    const subject = encodeURIComponent("অভিযোগ - ওয়েবসাইট");
+    const body = encodeURIComponent(
+      `নাম: ${name || "উল্লেখ করেননি"}\nমোবাইল: ${mobile || "উল্লেখ করেননি"}\n\nঅভিযোগ:\n${complaint}`
+    );
+    const emailEntry = contact.social.find((s) => s.icon === "email");
+    const email = emailEntry ? emailEntry.url.replace("mailto:", "") : "";
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+
+    setSubmitted(true);
+    setName("");
+    setMobile("");
+    setComplaint("");
+  };
+
+  return (
+    <form className="complaint-form" onSubmit={handleSubmit}>
+      <div className="form-field">
+        <label htmlFor="complaint-name">নাম (অপশনাল)</label>
+        <input
+          id="complaint-name"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="আপনার নাম"
+        />
+      </div>
+
+      <div className="form-field">
+        <label htmlFor="complaint-mobile">মোবাইল (অপশনাল)</label>
+        <input
+          id="complaint-mobile"
+          type="tel"
+          value={mobile}
+          onChange={(e) => setMobile(e.target.value)}
+          placeholder="০১XXXXXXXXX"
+        />
+      </div>
+
+      <div className="form-field">
+        <label htmlFor="complaint-message">অভিযোগ</label>
+        <textarea
+          id="complaint-message"
+          rows="5"
+          value={complaint}
+          onChange={(e) => setComplaint(e.target.value)}
+          placeholder="আপনার অভিযোগ লিখুন"
+          required
+        />
+      </div>
+
+      <button type="submit" className="btn btn-primary">
+        পাঠান
+      </button>
+
+      {submitted && (
+        <p className="form-success">ধন্যবাদ, আপনার অভিযোগ গ্রহণ করা হয়েছে।</p>
+      )}
+    </form>
+  );
+}
+
 export default function Contact() {
   const ref = useRef(null);
 
@@ -53,24 +124,35 @@ export default function Contact() {
             {contact.heading}
           </h2>
           <div className="divider center" />
-          <p style={{ color: "#4a5568", fontSize: "1.05rem", maxWidth: "560px", margin: "0 auto 1rem" }}>
-            {contact.description}
-          </p>
 
-          <div className="social-grid">
-            {contact.social.map((s) => (
-              <a
-                key={s.platform}
-                href={s.url}
-                className={`social-btn ${s.icon}`}
-                target={s.icon !== "email" ? "_blank" : undefined}
-                rel={s.icon !== "email" ? "noopener noreferrer" : undefined}
-                aria-label={`${s.label}-এ যোগাযোগ করুন`}
-              >
-                {socialIcons[s.icon]}
-                {s.label}
-              </a>
-            ))}
+          <div className="contact-columns">
+            <div className="contact-column">
+              <h3 className="contact-column-heading">যোগাযোগ</h3>
+              <p style={{ color: "#4a5568", fontSize: "1.05rem" }}>
+                {contact.description}
+              </p>
+
+              <div className="social-grid">
+                {contact.social.map((s) => (
+                  <a
+                    key={s.platform}
+                    href={s.url}
+                    className={`social-btn ${s.icon}`}
+                    target={s.icon !== "email" ? "_blank" : undefined}
+                    rel={s.icon !== "email" ? "noopener noreferrer" : undefined}
+                    aria-label={`${s.label}-এ যোগাযোগ করুন`}
+                  >
+                    {socialIcons[s.icon]}
+                    {s.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="contact-column">
+              <h3 className="contact-column-heading">অভিযোগ</h3>
+              <ComplaintForm />
+            </div>
           </div>
         </div>
       </div>
