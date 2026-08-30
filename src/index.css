@@ -669,162 +669,67 @@ img {
 
 .timeline-wrapper {
   position: relative;
-  max-width: 820px;
+  max-width: 640px;
   margin: 0 auto;
 }
 
 .timeline-line {
   position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, #007a3f, #a2f1a4, #007a3f);
-  transform: translateX(-50%);
-  border-radius: 3px;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: #d8e6e0;
 }
 
 .timeline-item {
-  display: grid;
-  grid-template-columns: 1fr 60px 1fr;
-  gap: 0;
-  margin-bottom: 3rem;
-  align-items: start;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  align-items: flex-start;
 }
 
-/* On desktop: right column year badge is hidden by CSS var default */
-:root {
-  --year-right-display: none;
-}
-
-/* On desktop: duplicate cards for odd items are hidden */
-.timeline-card-mobile-only {
-  display: none;
-}
-
-.timeline-item:nth-child(even) .timeline-card {
-  grid-column: 3;
-  text-align: left;
-}
-
-.timeline-item:nth-child(odd) .timeline-left {
-  text-align: right;
-}
-
-.timeline-left {
-  padding-right: 2.5rem;
-}
-
-.timeline-right {
-  padding-left: 2.5rem;
-}
-
-.timeline-year-badge {
-  display: inline-block;
-  background: #ffdd0d;
-  color: #1d2f2d;
-  padding: 0.3rem 0.9rem;
-  border-radius: 50px;
-  font-weight: 800;
-  font-size: 0.82rem;
-  white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(255, 221, 13, 0.35);
+.timeline-item:last-child {
+  margin-bottom: 0;
 }
 
 .timeline-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-shrink: 0;
   position: relative;
   z-index: 2;
+  padding-top: 0.3rem;
 }
 
 .timeline-dot {
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 12px;
   background: #007a3f;
-  border: 3px solid #a2f1a4;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(0, 122, 63, 0.2);
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
 }
 
-.timeline-item:hover .timeline-dot {
-  transform: scale(1.4);
-  background: #ffdd0d;
-  border-color: #007a3f;
+.timeline-content {
+  flex: 1;
+  padding-bottom: 0.25rem;
 }
 
-.timeline-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 1.25rem 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-  border-left: 4px solid #007a3f;
-  transition: all 0.3s ease;
+.timeline-year {
+  display: block;
+  color: #007a3f;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
 }
 
-.timeline-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(0, 122, 63, 0.15);
-}
-
-.timeline-card p {
+.timeline-content p {
   color: #4a5568;
-  font-size: 0.95rem;
-  line-height: 1.75;
+  font-size: 0.98rem;
+  line-height: 1.7;
 }
 
-/* Mobile Timeline — single column, dot on the left */
 @media (max-width: 640px) {
-  .timeline-line {
-    left: 10px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-  }
-  .timeline-wrapper {
-    padding-left: 0;
-  }
   .timeline-item {
-    display: flex;
-    flex-direction: row;
-    gap: 0.75rem;
+    gap: 1rem;
     margin-bottom: 2rem;
-    align-items: flex-start;
-  }
-  /* Hide left column entirely on mobile */
-  .timeline-left {
-    display: none !important;
-  }
-  /* Center column: just the dot */
-  .timeline-center {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 0.25rem;
-    width: 22px;
-  }
-  /* Right column: year badge + card stacked */
-  .timeline-right {
-    flex: 1;
-    padding-left: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  /* On mobile: always show year badge in the right column */
-  .timeline-right .timeline-year-badge {
-    display: inline-block !important;
-  }
-  /* On mobile: show the duplicate cards for odd items */
-  .timeline-card-mobile-only {
-    display: block !important;
-  }
-  .timeline-card {
-    padding: 1rem 1.25rem;
   }
 }
 
