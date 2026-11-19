@@ -2,7 +2,12 @@ import LegalPage from "./LegalPage";
 
 export default function TermsAndConditions() {
   return (
-    <LegalPage title="শর্তাবলী" updated="২৫ আগস্ট, ২০২৬">
+    <LegalPage
+      title="শর্তাবলী"
+      updated="২৫ আগস্ট, ২০২৬"
+      path="/terms-and-conditions"
+      description="ritonvai.com ব্যবহারের শর্তাবলী: মাহফুজুর রহমান রিটনের অফিসিয়াল ওয়েবসাইটের কনটেন্ট ব্যবহার, তথ্যের সঠিকতা ও বহিঃসংযোগ সম্পর্কে নিয়মাবলী।"
+    >
       <p>
         এই ওয়েবসাইট ব্যবহারের মাধ্যমে আপনি নিচের শর্তাবলীর সাথে সম্মত হচ্ছেন
         বলে গণ্য করা হবে। অনুগ্রহ করে ওয়েবসাইট ব্যবহারের পূর্বে শর্তাবলী

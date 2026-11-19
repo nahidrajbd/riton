@@ -1,16 +1,23 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { setPageMeta, resetHomeMeta } from "../utils/seo";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-export default function LegalPage({ title, updated, children }) {
+export default function LegalPage({ title, updated, description, path, children }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    document.title = `${title} | মাহফুজুর রহমান রিটন`;
+    setPageMeta({
+      title: `${title} | মাহফুজুর রহমান রিটন`,
+      description:
+        description ||
+        `${title}: মাহফুজুর রহমান রিটনের অফিসিয়াল ওয়েবসাইট ritonvai.com এর ${title}।`,
+      path,
+    });
     return () => {
-      document.title = "মাহফুজুর রহমান রিটন | প্রশাসক, রাজশাহী সিটি কর্পোরেশন";
+      resetHomeMeta();
     };
-  }, [title]);
+  }, [title, description, path]);
 
   return (
     <>

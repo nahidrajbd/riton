@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import { inspiringLeaders } from "../data/leaders";
+import { setPageMeta, resetHomeMeta } from "../utils/seo";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -12,10 +13,14 @@ export default function LeaderPage() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     if (leader) {
-      document.title = `${leader.name} | মাহফুজুর রহমান রিটন`;
+      setPageMeta({
+        title: `${leader.name} | মাহফুজুর রহমান রিটন`,
+        description: leader.metaDescription || leader.shortBio,
+        path: `/leader/${leader.slug}`,
+      });
     }
     return () => {
-      document.title = "মাহফুজুর রহমান রিটন | প্রশাসক, রাজশাহী সিটি কর্পোরেশন";
+      resetHomeMeta();
     };
   }, [slug, leader]);
 

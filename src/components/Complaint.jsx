@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { contact } from "../data/content";
+import { setPageMeta, resetHomeMeta } from "../utils/seo";
 
 const noticeIcons = {
   shield: (
@@ -64,9 +65,14 @@ export default function Complaint() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    document.title = "অভিযোগ | মাহফুজুর রহমান রিটন";
+    setPageMeta({
+      title: "অভিযোগ | মাহফুজুর রহমান রিটন",
+      description:
+        "রাজশাহী সিটি কর্পোরেশন সংক্রান্ত সমস্যা বা অভিযোগ সরাসরি প্রশাসক মাহফুজুর রহমান রিটনের কাছে জানান। সঠিক স্থান ও সমস্যা স্পষ্ট করে লিখলে বিষয়টি দ্রুত শনাক্ত করা সহজ হয়।",
+      path: "/complaint",
+    });
     return () => {
-      document.title = "মাহফুজুর রহমান রিটন | প্রশাসক, রাজশাহী সিটি কর্পোরেশন";
+      resetHomeMeta();
     };
   }, []);
 

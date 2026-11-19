@@ -17,11 +17,14 @@ import LeaderPage from "./components/LeaderPage";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsAndConditions from "./components/TermsAndConditions";
 import Complaint from "./components/Complaint";
+import NotFound from "./components/NotFound";
+import { resetHomeMeta } from "./utils/seo";
 
 function HomePage() {
   const location = useLocation();
 
   useEffect(() => {
+    resetHomeMeta();
     if (location.hash) {
       const target = document.querySelector(location.hash);
       if (target) {
@@ -53,16 +56,23 @@ function HomePage() {
   );
 }
 
+export function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/leader/:slug" element={<LeaderPage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+      <Route path="/complaint" element={<Complaint />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+}
+
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/leader/:slug" element={<LeaderPage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-        <Route path="/complaint" element={<Complaint />} />
-      </Routes>
+      <AppRoutes />
     </BrowserRouter>
   );
 }
