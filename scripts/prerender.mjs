@@ -62,7 +62,12 @@ const routes = [
 ];
 
 function applyMeta(html, { title, description, path: routePath }) {
-  const url = SITE + routePath;
+  // The host serves each pre-rendered route folder at a trailing slash
+  // URL, so the canonical uses that same final URL.
+  const url =
+    routePath === "/" || routePath === "/404"
+      ? SITE + routePath
+      : SITE + routePath + "/";
   return html
     .replace(/<title>.*?<\/title>/, `<title>${title}</title>`)
     .replace(

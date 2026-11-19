@@ -22,7 +22,11 @@ function setTag(selector, create, attrs) {
 }
 
 export function setPageMeta({ title, description, path }) {
-  const url = SITE_URL + (path || "/");
+  const cleanPath = path || "/";
+  // The host serves each pre-rendered route folder at a trailing slash
+  // URL, so the canonical uses that same final URL.
+  const url =
+    cleanPath === "/" ? SITE_URL + "/" : SITE_URL + cleanPath + "/";
   document.title = title;
 
   setTag('meta[name="description"]', () => document.createElement("meta"), {
